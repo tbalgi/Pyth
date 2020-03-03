@@ -127,7 +127,7 @@ DF = pd.read_csv("City Drive 2.csv")
 
 def find_potholes(accln, DF):
     '''
-    function to find potholes
+    Function to find potholes
     '''
     potholes = []
     length = len(accln)
