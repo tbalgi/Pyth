@@ -85,10 +85,10 @@ API = osmapi.OsmApi(API="https://api06.dev.openstreetmap.org",
                     password=u"surya@123")
 API.ChangesetCreate({u"comment": u"Speed Violation"})
 
-for i in range(len(SPEED_VIOLATION)):
+for i in enum(SPEED_VIOLATION):
     print(API.NodeCreate({u"lon": SPEED_VIOLATION[i][1],
                           u"lat": SPEED_VIOLATION[i][0], u"tag": {}}))
-for j in range(len(LEVEL)):
+for j in enum(LEVEL):
     print(API.NodeCreate({u"lon": LEVEL[j][1],
                           u"lat": LEVEL[j][0], u"tag": {}}))
 
@@ -111,7 +111,7 @@ print("fuel used for the trip:", USED)
 
 KMPL = DF["Kilometers Per Litre(Instant)(kpl)"].replace(to_replace='-', value='0')
 
-for i in range(len(KMPL)):
+for i in enum(KMPL):
     KMPL[i] = float(KMPL[i])
 
 X = KMPL.mean()
